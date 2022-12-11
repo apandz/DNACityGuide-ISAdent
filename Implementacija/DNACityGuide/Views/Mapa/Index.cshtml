@@ -1,0 +1,202 @@
+﻿@model IEnumerable<DNACityGuide.Models.Mapa>
+
+@{
+    ViewData["Title"] = "Mapa";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Mapa</h1>
+</div>
+<div style="margin-top: 2%; margin-bottom: 2% ">
+ <div id="myMap"
+style="position:relative;width:1280px;height:400px;"></div>
+</div>
+<script type='text/javascript'
+src='https://www.bing.com/api/maps/mapcontrol?callback=GetMap' async
+defer></script>
+ 
+<script type='text/javascript'>
+    function GetMap()
+    {
+        var map = new Microsoft.Maps.Map('#myMap', {
+ credentials: 'Atnw3dRrAv15mKV-OY9F-_o2SrYfPkNICXj6-Q4gLRujAu0Kzv3dd4pWXKyH9-QD',
+ center: new Microsoft.Maps.Location(43.8563, 18.4131),
+ mapTypeId: Microsoft.Maps.MapTypeId.aerial,
+ zoom: 10
+ });
+        
+        infobox = new Microsoft.Maps.Infobox(map.getCenter(), {
+            visible: false
+        });
+        infobox.setMap(map);
+        var atrakcija = new Microsoft.Maps.Location(43.856182, 18.420223);
+        var pin = new Microsoft.Maps.Pushpin(atrakcija);
+        pin.metadata = {
+            title: 'Vijećnica'
+        };
+        Microsoft.Maps.Events.addHandler(pin, 'click', pushpinClicked);
+        map.entities.push(pin);
+
+        atrakcija = new Microsoft.Maps.Location(43.855049, 18.402670);
+        pin = new Microsoft.Maps.Pushpin(atrakcija);
+        pin.metadata = {
+            title: 'Zemaljski muzej'
+        };
+        Microsoft.Maps.Events.addHandler(pin, 'click', pushpinClicked);
+        map.entities.push(pin);
+
+        atrakcija = new Microsoft.Maps.Location(43.820194, 18.336784);
+        pin = new Microsoft.Maps.Pushpin(atrakcija);
+        pin.metadata = {
+            title: 'Tunel spasa'
+        };
+        Microsoft.Maps.Events.addHandler(pin, 'click', pushpinClicked);
+        map.entities.push(pin);
+
+        atrakcija = new Microsoft.Maps.Location(43.857323, 18.390224);
+        pin = new Microsoft.Maps.Pushpin(atrakcija);
+        pin.metadata = {
+            title: 'Historijski muzej'
+        };
+        Microsoft.Maps.Events.addHandler(pin, 'click', pushpinClicked);
+        map.entities.push(pin);
+
+        atrakcija = new Microsoft.Maps.Location(43.859291, 18.425600);
+        pin = new Microsoft.Maps.Pushpin(atrakcija);
+        pin.metadata = {
+            title: 'Galerija 11/07/95'
+        };
+        Microsoft.Maps.Events.addHandler(pin, 'click', pushpinClicked);
+        map.entities.push(pin);
+
+        atrakcija = new Microsoft.Maps.Location(43.860344, 18.422745);
+        pin = new Microsoft.Maps.Pushpin(atrakcija);
+        pin.metadata = {
+            title: 'Olimpijski muzej'
+        };
+        Microsoft.Maps.Events.addHandler(pin, 'click', pushpinClicked);
+        map.entities.push(pin);
+
+        atrakcija = new Microsoft.Maps.Location(43.854816, 18.418718);
+        pin = new Microsoft.Maps.Pushpin(atrakcija);
+        pin.metadata = {
+            title: 'Muzej optičkih iluzija'
+        };
+        Microsoft.Maps.Events.addHandler(pin, 'click', pushpinClicked);
+        map.entities.push(pin);
+
+        atrakcija = new Microsoft.Maps.Location(43.857780, 18.428909);
+        pin = new Microsoft.Maps.Pushpin(atrakcija);
+        pin.metadata = {
+            title: 'Muzej Sarajeva'
+        };
+        Microsoft.Maps.Events.addHandler(pin, 'click', pushpinClicked);
+        map.entities.push(pin);
+
+        atrakcija = new Microsoft.Maps.Location(43.857613, 18.426861);
+        pin = new Microsoft.Maps.Pushpin(atrakcija);
+        pin.metadata = {
+            title: 'Muzej književnosti'
+        };
+        Microsoft.Maps.Events.addHandler(pin, 'click', pushpinClicked);
+        map.entities.push(pin);
+
+        atrakcija = new Microsoft.Maps.Location(43.878887, 18.412359);
+        pin = new Microsoft.Maps.Pushpin(atrakcija);
+        pin.metadata = {
+            title: 'Pionirska dolina'
+        };
+        Microsoft.Maps.Events.addHandler(pin, 'click', pushpinClicked);
+        map.entities.push(pin);
+
+        atrakcija = new Microsoft.Maps.Location(43.818501, 18.269970);
+        pin = new Microsoft.Maps.Pushpin(atrakcija);
+        pin.metadata = {
+            title: 'Vrelo Bosne'
+        };
+        Microsoft.Maps.Events.addHandler(pin, 'click', pushpinClicked);
+        map.entities.push(pin);
+
+        atrakcija = new Microsoft.Maps.Location(43.855595, 18.435016);
+        pin = new Microsoft.Maps.Pushpin(atrakcija);
+        pin.metadata = {
+            title: 'Sarajevska žičara'
+        };
+        Microsoft.Maps.Events.addHandler(pin, 'click', pushpinClicked);
+        map.entities.push(pin);
+
+        atrakcija = new Microsoft.Maps.Location(43.862436, 18.429236);
+        pin = new Microsoft.Maps.Pushpin(atrakcija);
+        pin.metadata = {
+            title: 'Svrzina kuća'
+        };
+        Microsoft.Maps.Events.addHandler(pin, 'click', pushpinClicked);
+        map.entities.push(pin);
+
+        atrakcija = new Microsoft.Maps.Location(43.861561, 18.433773);
+        pin = new Microsoft.Maps.Pushpin(atrakcija);
+        pin.metadata = {
+            title: 'Muzej Alije Izetbegovića'
+        };
+        Microsoft.Maps.Events.addHandler(pin, 'click', pushpinClicked);
+        map.entities.push(pin);
+
+        atrakcija = new Microsoft.Maps.Location(43.856258, 18.432280);
+        pin = new Microsoft.Maps.Pushpin(atrakcija);
+        pin.metadata = {
+            title: 'Muzej sarajevske pivare'
+        };
+        Microsoft.Maps.Events.addHandler(pin, 'click', pushpinClicked);
+        map.entities.push(pin);
+
+        atrakcija = new Microsoft.Maps.Location(43.852433, 18.433058);
+        pin = new Microsoft.Maps.Pushpin(atrakcija);
+        pin.metadata = {
+            title: 'Bistrička stanica'
+        };
+        Microsoft.Maps.Events.addHandler(pin, 'click', pushpinClicked);
+        map.entities.push(pin);
+
+        atrakcija = new Microsoft.Maps.Location(43.858009, 18.435030);
+        pin = new Microsoft.Maps.Pushpin(atrakcija);
+        pin.metadata = {
+            title: 'Inat kuća'
+        };
+        Microsoft.Maps.Events.addHandler(pin, 'click', pushpinClicked);
+        map.entities.push(pin);
+
+        atrakcija = new Microsoft.Maps.Location(43.859673, 18.424656);
+        pin = new Microsoft.Maps.Pushpin(atrakcija);
+        pin.metadata = {
+            title: 'Bosanski institut'
+        };
+        Microsoft.Maps.Events.addHandler(pin, 'click', pushpinClicked);
+        map.entities.push(pin);
+
+        atrakcija = new Microsoft.Maps.Location(43.858749, 18.431070);
+        pin = new Microsoft.Maps.Pushpin(atrakcija);
+        pin.metadata = {
+            title: 'Art kuća'
+        };
+        Microsoft.Maps.Events.addHandler(pin, 'click', pushpinClicked);
+        map.entities.push(pin);
+
+        atrakcija = new Microsoft.Maps.Location(43.855765, 18.417112);
+        pin = new Microsoft.Maps.Pushpin(atrakcija);
+        pin.metadata = {
+            title: 'Selfie muzej'
+        };
+        Microsoft.Maps.Events.addHandler(pin, 'click', pushpinClicked);
+        map.entities.push(pin);
+    }
+    function pushpinClicked(e) {
+        if (e.target.metadata) {
+            infobox.setOptions({
+                location: e.target.getLocation(),
+                title: e.target.metadata.title,
+                description: e.target.metadata.description,
+                visible: true
+            });
+        }
+    }   
+</script>
